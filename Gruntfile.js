@@ -57,8 +57,6 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    { expand: true, src: ['public/components/bootstrap/dist/js/bootstrap.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
-                    { expand: true, src: ['public/components/bootstrap/dist/css/bootstrap.min.css'], dest: 'public/css/vendor/', flatten: true, filter: 'isFile' },
                     { expand: true, src: ['public/components/jquery/dist/jquery.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
                     { expand: true, src: ['public/components/jquery/dist/jquery.min.map'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
                     { expand: true, src: ['public/components/lodash/lodash.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
