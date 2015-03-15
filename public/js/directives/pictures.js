@@ -1,12 +1,10 @@
 (function() {
-	var app = angular.module('picturesDirectives', [])
+	var app = angular.module('picturesDirectives', ['picturesCtrls'])
 				.directive('picturesInfo', function() {
 					return {
 						restrict: 'E',
 						templateUrl: "../partials/pictures-info.html",
-						controller: function() {
-							this.pics = [];
-						},
+						controller: 'PicturesCtrl',
 						controllerAs: "picsCtrl"
 					};
 				});
