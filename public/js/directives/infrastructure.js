@@ -17,8 +17,10 @@
 						templateUrl: "../partials/criteria-selector.html",
 						controller: function() {
 							this.tagList = [];
-							this.addTag = function(tag) {
-								this.tagList.push(tag);
+							this.currentTag = "";
+							this.addTag = function() {
+								this.tagList.push(this.currentTag);
+								this.currentTag = "";
 							}
 						},
 						controllerAs: "criteriaCtrl"

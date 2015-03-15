@@ -3,10 +3,15 @@
 	<p>Find here the latest Flickr pictures...</p>
 	<div class="input-group input-group-lg">
 		<span class="input-group-addon" id="sizing-addon1">#</span>
-		<input id="tag-input" type="text" class="form-control" placeholder="Tag" aria-describedby="sizing-addon1">
+		<input ng-model="criteriaCtrl.currentTag" id="tag-input" type="text" class="form-control" placeholder="Tag" aria-describedby="sizing-addon1">
 	</div>
-	<a id="add-tag" class="btn btn-info btn-small" ng-click="criteriaCtrl.addTag($('#tag-input').val())" href="#" role="button">	Add
+	<a id="add-tag" class="btn btn-info btn-small" ng-click="criteriaCtrl.addTag()" href="#" role="button">	Add
 	</a>
+	<div>
+		<ul class="list-group" ng-repeat="tag in criteriaCtrl.tagList">
+			<li class="list-group-item">{{tag}}</li>
+		</ul>
+	</div>
 	<p>
 		<a class="btn btn-primary btn-lg" href="#" role="button">
 			Find
