@@ -54,6 +54,25 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+        uglify: {
+            js: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'public/dist/js/dependencies.min.js': [ 'public/js/vendor/*.min.js' ],
+                    'public/dist/js/controllers.min.js': [ 'public/js/controllers/*.js' ],
+                    'public/dist/js/directives.min.js': [ 'public/js/directives/*.js' ]
+                }
+            }
+        },
+        cssmin: {
+            target: {
+                files: {
+                    'public/dist/css/main.css': ['public/css/*.css']
+                }
+            }
+        },
         copy: {
             main: {
                 files: [
@@ -88,7 +107,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', function (target) {
-        grunt.task.run([ 'bower:install', 'copy', 'connect:livereload', 'open', 'watch' ]);
+        grunt.task.run([ 'bower:install', 'copy', 'uglify:js', 'connect:livereload', 'open', 'watch' ]);
     })
     .registerTask('run-dev', function (target) {
         grunt.task.run([ 'concurrent' ]);
