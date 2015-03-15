@@ -6,7 +6,7 @@
 						restrict: 'E',
 						templateUrl: "../partials/navigation-bar.html",
 						controller: function() {
-							this.status = { test: 'foo' };
+							
 						},
 						controllerAs: "navCtrl"
 					};
