@@ -110,7 +110,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', function (target) {
-        grunt.task.run([ 'bower:install', 'copy', 'uglify:js', 'connect:livereload', 'open', 'watch' ]);
+        grunt.task.run([ 'bower:install', 'copy', 'uglify:js', 'cssmin', 'connect:livereload', 'open', 'watch' ]);
     })
     .registerTask('run-dev', function (target) {
         grunt.task.run([ 'concurrent' ]);
