@@ -5,15 +5,15 @@
 		<span class="input-group-addon" id="sizing-addon1">#</span>
 		<input ng-model="criteriaCtrl.currentTag" id="tag-input" type="text" class="form-control" placeholder="Tag" aria-describedby="sizing-addon1">
 	</div>
-	<a id="add-tag" class="btn btn-info btn-small" ng-click="criteriaCtrl.addTag()" href="#" role="button">	Add
-	</a>
+	<a id="add-tag" class="btn btn-info btn-small" ng-click="criteriaCtrl.addTag()" href="#" role="button">Add</a>
+	<a id="add-random-tag" class="btn btn-info btn-small" ng-click="criteriaCtrl.addRandomTag()" href="#" role="button">Add Random</a>
 	<div>
 		<ul class="list-group" ng-repeat="tag in criteriaCtrl.tagList">
 			<li class="list-group-item">{{tag}}</li>
 		</ul>
 	</div>
 	<p>
-		<a class="btn btn-primary btn-lg" href="#" role="button">
+		<a class="btn btn-primary btn-lg" href="#" role="button" ng-click="criteriaCtrl.queryPics()">
 			Find
 			<span class="badge">{{criteriaCtrl.tagList.length}}</span>
 		</a>
