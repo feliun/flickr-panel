@@ -60,7 +60,10 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'public/dist/js/dependencies.min.js': [ 'public/js/vendor/*.min.js' ],
+                    'public/dist/js/dependencies.min.js': [ 'public/js/vendor/jquery.min.js',
+                                                            'public/js/vendor/bootstrap-shop.min.js',
+                                                            'public/js/vendor/lodash.min.js',
+                                                            'public/js/vendor/angular.min.js' ],
                     'public/dist/js/controllers.min.js': [ 'public/js/controllers/*.js' ],
                     'public/dist/js/directives.min.js': [ 'public/js/directives/*.js' ]
                 }
