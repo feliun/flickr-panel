@@ -10,5 +10,18 @@
 						},
 						controllerAs: "navCtrl"
 					};
+				})
+				.directive('criteriaSelector', function() {
+					return {
+						restrict: 'E',
+						templateUrl: "../partials/criteria-selector.html",
+						controller: function() {
+							this.tagList = [];
+							this.addTag = function(tag) {
+								this.tagList.push(tag);
+							}
+						},
+						controllerAs: "criteriaCtrl"
+					}
 				});
 })();

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Flickr panel</title>
+    <title>Flickr wallpaper</title>
     <link href="./css/vendor/bootstrap-shop.min.css" rel="stylesheet">
     <link href="./css/vendor/shop-homepage.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
   </head>
 
   <body ng-controller="MainCtrl as main">
@@ -20,11 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="jumbotron">
-                  <h1>Flickr pics</h1>
-                  <p>Find here the latest Flickr pictures...</p>
-                  <p><a class="btn btn-primary btn-lg" href="#" role="button">Find</a></p>
-                </div>
+                <criteria-selector></criteria-selector>
             </div>
         </div>
     </div>

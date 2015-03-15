@@ -1,0 +1,8 @@
+.jumbotron .input-group.input-group-lg {
+	width: 70%;
+}
+
+#add-tag {
+	display: block;
+    width: 50px;
+}
