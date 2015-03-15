@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('flickrApp', ['infrastructure', 'pictures'])
+	var app = angular.module('flickrApp', ['infrastructureCtrls', 'infrastructureDirectives', 'picturesDirectives'])
 				.controller('MainCtrl', function() {
 					
 				});

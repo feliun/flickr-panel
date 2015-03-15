@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('pictures', [])
+	var app = angular.module('picturesDirectives', [])
 				.directive('picturesInfo', function() {
 					return {
 						restrict: 'E',
