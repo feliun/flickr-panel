@@ -1,6 +1,5 @@
 'use strict';
 var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
@@ -11,33 +10,44 @@ module.exports = function (grunt) {
     grunt.initConfig({
         watch: {
             options: {
-                nospawn: true
+                nospawn: true,
+                livereload: true
             },
-            livereload: {
+            css: {
                 options: {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    'public/*.html',
-                    'public/css/**/*.css',
-                    'public/js/**/*.js'
-                ]
-            }
-        },
-        connect: {
-            options: {
-                port: 4000,
-                hostname: '0.0.0.0'
+                    'public/css/**/*.css'
+                ],
+                tasks: ['cssmin']
             },
-            livereload: {
+            services: {
                 options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, 'public'),
-                            lrSnippet
-                        ];
-                    }
-                }
+                    livereload: LIVERELOAD_PORT
+                },
+                files: [
+                    'public/js/services/*.js'
+                ],
+                tasks: ['uglify:services']
+            },
+            controllers: {
+                options: {
+                    livereload: LIVERELOAD_PORT
+                },
+                files: [
+                    'public/js/controllers/*.js'
+                ],
+                tasks: ['uglify:controllers']
+            },
+            directives: {
+                options: {
+                    livereload: LIVERELOAD_PORT
+                },
+                files: [
+                    'public/js/directives/*.js'
+                ],
+                tasks: ['uglify:directives']
             }
         },
         nodemon: {
@@ -64,7 +74,32 @@ module.exports = function (grunt) {
                                                             'public/js/vendor/bootstrap-shop.min.js',
                                                             'public/js/vendor/lodash.min.js',
                                                             'public/js/vendor/angular.min.js' ],
+                    'public/dist/js/services.min.js': [ 'public/js/services/*.js' ],
                     'public/dist/js/controllers.min.js': [ 'public/js/controllers/*.js' ],
+                    'public/dist/js/directives.min.js': [ 'public/js/directives/*.js' ]
+                }
+            },
+            services: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'public/dist/js/services.min.js': [ 'public/js/services/*.js' ]
+                }
+            },
+            controllers: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'public/dist/js/controllers.min.js': [ 'public/js/controllers/*.js' ]
+                }
+            },
+            directives: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
                     'public/dist/js/directives.min.js': [ 'public/js/directives/*.js' ]
                 }
             }
@@ -89,7 +124,7 @@ module.exports = function (grunt) {
         },
 		concurrent: {
 			dev: {
-				tasks: ['nodemon', 'connect:livereload', 'open', 'watch' ],
+				tasks: ['nodemon', 'uglify:js', 'cssmin', 'open', 'watch' ],
 				options: {
 					logConcurrentOutput: true
 				}
@@ -104,13 +139,13 @@ module.exports = function (grunt) {
 		},
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>'
+                path: 'http://localhost:4000'
             }
         }
     });
 
     grunt.registerTask('default', function (target) {
-        grunt.task.run([ 'bower:install', 'copy', 'uglify:js', 'cssmin', 'connect:livereload', 'open', 'watch' ]);
+        grunt.task.run([ 'bower:install', 'copy', 'uglify:js', 'cssmin' ]);
     })
     .registerTask('run-dev', function (target) {
         grunt.task.run([ 'concurrent' ]);
