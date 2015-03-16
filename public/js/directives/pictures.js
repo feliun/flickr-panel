@@ -4,8 +4,7 @@
 					return {
 						restrict: 'E',
 						templateUrl: "../partials/pictures-info.html",
-						controller: 'PicturesCtrl',
-						controllerAs: "picsCtrl"
+						controller: 'PicturesCtrl'
 					};
 				});
 })();

@@ -22,11 +22,7 @@
 					};
 
 					this.queryPics = function() {
-						var self = this;
-						httpQueries.flickrData(self.tagList, function(data) {
-							self.tagList = [];
-							console.log('data:', data);
-						});
+						httpQueries.flickrData(this.tagList);
 					};
 
 				}]);
