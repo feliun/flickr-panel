@@ -119,6 +119,7 @@ module.exports = function (grunt) {
                     { expand: true, src: ['public/components/lodash/lodash.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
                     { expand: true, src: ['public/components/angular/angular.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
                     { expand: true, src: ['public/components/angular/angular.min.js.map'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
+                    { expand: true, src: ['public/css/fonts/*'], dest: 'public/dist/fonts', flatten: true },
                 ]
             },
         },
