@@ -23,6 +23,7 @@
 
 					this.queryPics = function() {
 						httpQueries.flickrData(this.tagList);
+						this.tagList = [];
 					};
 
 				}]);
