@@ -70,10 +70,10 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'public/dist/js/dependencies.min.js': [ 'public/js/vendor/jquery.min.js',
+                    'public/dist/js/dependencies.min.js': [ 'public/bower_components/jquery/dist/jquery.min.js',
                                                             'public/js/vendor/bootstrap-shop.min.js',
-                                                            'public/js/vendor/lodash.min.js',
-                                                            'public/js/vendor/angular.min.js' ],
+                                                            'public/bower_components/lodash/lodash.min.js',
+                                                            'public/bower_components/angular/angular.min.js' ],
                     'public/dist/js/services.min.js': [ 'public/js/services/*.js' ],
                     'public/dist/js/controllers.min.js': [ 'public/js/controllers/*.js' ],
                     'public/dist/js/directives.min.js': [ 'public/js/directives/*.js' ]
@@ -114,12 +114,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    { expand: true, src: ['public/components/jquery/dist/jquery.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
-                    { expand: true, src: ['public/components/jquery/dist/jquery.min.map'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
-                    { expand: true, src: ['public/components/lodash/lodash.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
-                    { expand: true, src: ['public/components/angular/angular.min.js'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
-                    { expand: true, src: ['public/components/angular/angular.min.js.map'], dest: 'public/js/vendor/', flatten: true, filter: 'isFile' },
-                    { expand: true, src: ['public/css/fonts/*'], dest: 'public/dist/fonts', flatten: true },
+                    { expand: true, src: ['public/css/fonts/*'], dest: 'public/dist/fonts', flatten: true }
                 ]
             },
         },
@@ -134,7 +129,7 @@ module.exports = function (grunt) {
         bower: {
 			install: {
 				options: {
-					targetDir: './public/components'
+					targetDir: './public/bower_components'
 				}
 			}
 		},
