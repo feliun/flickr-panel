@@ -1,7 +1,7 @@
 (function() {
 	var app = angular.module('flickrApp', [ 'httpServices',
-											'infrastructureCtrls', 'picturesCtrls', 
-											'infrastructureDirectives', 'picturesDirectives'])
+											'navigationCtrls', 'filterCtrls', 'picBoardCtrls',
+											'navigationDirectives', 'filterDirectives', 'picturesDirectives'])
 				.controller('MainCtrl', function() {
 					
 				});

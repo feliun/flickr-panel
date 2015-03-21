@@ -56,7 +56,7 @@ module.exports = function (grunt) {
 				options: {
 					nodeArgs: ['--nolazy',  '--harmony'],
 					env: {
-						PORT: '4000'
+						PORT: '5000'
 					},
 					cwd: __dirname,
 					ignore: ['node_modules/**'],
@@ -135,7 +135,7 @@ module.exports = function (grunt) {
 		},
         open: {
             server: {
-                path: 'http://localhost:4000'
+                path: 'http://localhost:5000'
             }
         }
     });

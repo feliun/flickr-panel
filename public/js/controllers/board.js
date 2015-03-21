@@ -1,6 +1,6 @@
 (function() {
-	var app = angular.module('picturesCtrls', ['httpServices'])
-				.controller('PicturesCtrl', ['$scope', 'HttpQueriesSvc', function($scope, httpQueries) {
+	var app = angular.module('picBoardCtrls', ['httpServices'])
+				.controller('PicBoardCtrl', ['$scope', 'HttpQueriesSvc', function($scope, httpQueries) {
 					$scope.picsList = [];
 
 					$scope.$on('newPics', function(event, pics) {
