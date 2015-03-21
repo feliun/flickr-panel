@@ -14,9 +14,10 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
 	res.redirect('index.html');
 });
-app.listen(4000, '127.0.0.1', function(err) {
+var port = process.env.PORT || 4000;
+app.listen(port, '127.0.0.1', function(err) {
     if (err) return console.err('Error: ', err.stack);
-    console.log('Listening on port 4000...');
+    console.log('Listening on port ' + port);
 });
 
 function errorHandler(err, req, res, next) {
