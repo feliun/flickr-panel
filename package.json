@@ -9,6 +9,7 @@
     "express": "~4.8.x",
     "lodash": "~3.0.x",
     "grunt": "*",
+    "grunt-cli": "*",
     "bower": "*"
   },
   "devDependencies": {
@@ -27,7 +28,7 @@
     "pre-commit": "0.0.9"
   },
   "scripts": {
-    "postinstall": "grunt",
+    "postinstall": "./node_modules/grunt-cli/bin/grunt",
     "start": "node server.js",
     "start-dev": "grunt run-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
