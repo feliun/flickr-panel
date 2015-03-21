@@ -27,7 +27,8 @@
     "pre-commit": "0.0.9"
   },
   "scripts": {
-    "start": "grunt run-dev",
+    "start": "node server.js",
+    "start-dev": "grunt run-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Felipe Polo Ruiz <felipe.polo@gmail.com> (https://github.com/feliun)",
