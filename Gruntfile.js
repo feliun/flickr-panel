@@ -74,7 +74,8 @@ module.exports = function (grunt) {
                                                             'public/js/vendor/bootstrap-shop.min.js',
                                                             'public/bower_components/lodash/lodash.min.js',
                                                             'public/bower_components/angular/angular.min.js',
-                                                            'public/bower_components/angular-ui-router/release/angular-ui-router.min.js' ],
+                                                            'public/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+                                                            'public/bower_components/ng-tags-input/ng-tags-input.min.js' ],
                     'public/dist/js/services.min.js': [ 'public/js/services/*.js' ],
                     'public/dist/js/controllers.min.js': [ 'public/js/controllers/*.js' ],
                     'public/dist/js/directives.min.js': [ 'public/js/directives/*.js' ]
