@@ -7,7 +7,7 @@
 					};
 
 					this.flickrData = function(tagList) {
-						var flickrUrl = 'http://www.flickr.com/services/feeds/photos_public.gne/?format=json&jsoncallback=?';
+						var flickrUrl = '//www.flickr.com/services/feeds/photos_public.gne/?format=json&jsoncallback=?';
 						var tagsQuery = tagList.join(',');
 						flickrUrl += '&tags=' + tagsQuery;
 						var self = this;
