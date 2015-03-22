@@ -3,19 +3,17 @@
 	<p>Find here the latest Flickr pictures...</p>
 	<div class="input-group input-group-lg">
 		<span class="input-group-addon" id="sizing-addon1">#</span>
-		<input ng-model="currentTag" id="tag-input" type="text" class="form-control" placeholder="Tag" aria-describedby="sizing-addon1">
+		<tags-input ng-model="tagsToAdd" id="tag-input" placeholder="Add tags to search by" aria-describedby="sizing-addon1"></tags-input>
 	</div>
-	<a id="add-tag" class="btn btn-info btn-small" ng-click="addTag()" href="#" role="button">Add</a>
+	<a id="add-tag" class="btn btn-info btn-small" ng-click="addTags()" href="#" role="button">Add</a>
 	<a id="add-random-tag" class="btn btn-info btn-small" ng-click="addRandomTag()" href="#" role="button">Add Random</a>
 	<div>
-		<ul class="list-group" ng-repeat="tag in tagList">
-			<li class="list-group-item">{{tag}}</li>
-		</ul>
+		<tags-input class="list-group" ng-model="tags"></tags-input>
 	</div>
 	<p>
 		<a class="btn btn-primary btn-lg" ui-sref="result" role="button" ng-click="queryPics()">
 			Find
-			<span class="badge">{{tagList.length}}</span>
+			<span class="badge">{{tags.length}}</span>
 		</a>
 	</p>
 </div>

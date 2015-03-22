@@ -1,10 +1,10 @@
 (function() {
-	var app = angular.module('flickrApp', [ 'ui.router',
+	var app = angular.module('flickrApp', [ 'ui.router', 'ngTagsInput',
 											'httpServices',
 											'navigationCtrls', 'filterCtrls', 'picBoardCtrls',
 											'navigationDirectives', 'filterDirectives', 'picturesDirectives' ])
 				.controller('MainCtrl', function() {
-					
+
 				})
 				.config(function($stateProvider, $urlRouterProvider) {
 					$urlRouterProvider.otherwise("/");
