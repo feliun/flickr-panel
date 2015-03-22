@@ -4,10 +4,11 @@
             <img src={{pic.media.m}} title={{pic.title}}>
             <div class="caption">
                 <h4><a target="_blank" href={{pic.link}}>{{pic.title || Untitled | limitTo: 35}}</a></h4>
-                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                <p>Published on {{pic.published | date:'d MMMM yyyy, HH:mm'}}</p>
+                <h4>Tags</h4>
+                <p><span ng-repeat="tag in pic.tags | limitTo:14">{{tag}} </span></p>
             </div>
             <div class="ratings">
-                <p class="pull-right">15 reviews</p>
                 <p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>

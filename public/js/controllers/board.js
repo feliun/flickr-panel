@@ -5,6 +5,10 @@
 
 					$scope.$on('newPics', function(event, pics) {
 						$scope.$apply(function() {
+							pics = _.map(pics, function(pic) {
+								pic.tags = pic.tags.split(' ');
+								return pic;
+							});
 							$scope.picsList = pics;
 						});
 				    });
