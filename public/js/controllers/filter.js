@@ -4,11 +4,7 @@
 					$scope.tags = [];
 
 					$scope.queryPics = function() {
-						var tags = [];
-						angular.forEach($scope.tags, function(value, index) {
-							this.push(value.text);
-						}, tags);
-						httpQueries.flickrData(tags);
+						httpQueries.flickrData(_.pluck($scope.tags, 'text'));
 						$scope.tags = [];
 					};
 
