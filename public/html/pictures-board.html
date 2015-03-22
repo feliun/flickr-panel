@@ -10,11 +10,7 @@
             </div>
             <div class="ratings">
                 <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star" ng-repeat="i in getArrayFromNumber(pic.score) track by $index"></span>
                 </p>
             </div>
         </div>

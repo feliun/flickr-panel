@@ -7,15 +7,15 @@
 						$scope.$apply(function() {
 							pics = _.map(pics, function(pic) {
 								pic.tags = pic.tags.split(' ');
+								pic.score = Math.floor(Math.random() * 6);
 								return pic;
 							});
 							$scope.picsList = pics;
 						});
 				    });
 
-				    $scope.getRandomNumber = function(num) {
-				    	var randomStarNumber = Math.floor(Math.random() * 6);
-					    return new Array(randomStarNumber);
+				    $scope.getArrayFromNumber = function(num) {
+					    return new Array(num);
 					}
 				}]);
 })();
