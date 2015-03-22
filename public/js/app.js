@@ -2,7 +2,7 @@
 	var app = angular.module('flickrApp', [ 'ui.router', 'ngTagsInput',
 											'httpServices',
 											'navigationCtrls', 'filterCtrls', 'picBoardCtrls',
-											'navigationDirectives', 'filterDirectives', 'picturesDirectives' ])
+											'navigationDirectives' ])
 				.controller('MainCtrl', function() {
 
 				})
