@@ -5,7 +5,6 @@
 
 					$scope.$on('newPics', function(event, pics) {
 				        $scope.picsList = pics;
-				        console.log($scope.picsList);
 				        $scope.$digest();
 				    });   
 				}]);
