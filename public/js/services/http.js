@@ -14,7 +14,7 @@
 						$.getJSON(flickrUrl, function(data) {
 							$rootScope.$broadcast('newPics', data.items); 
 						});
-					}; //Using this method because $http finds a CORS issue - maybe needs config
+					}; //Using this method because $http finds a CORS issue
 
 				}]);
 

@@ -4,8 +4,14 @@
 					$scope.picsList = [];
 
 					$scope.$on('newPics', function(event, pics) {
-				        $scope.picsList = pics;
-				        $scope.$digest();
-				    });   
+						$scope.$apply(function() {
+							$scope.picsList = pics;
+						});
+				    });
+
+				    $scope.getRandomNumber = function(num) {
+				    	var randomStarNumber = Math.floor(Math.random() * 6);
+					    return new Array(randomStarNumber);
+					}
 				}]);
 })();
