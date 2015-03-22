@@ -4,7 +4,6 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 
 var app = express();
-app.disable('x-powered-by'); // Shhhh! Don't tell the outside world what server we're using
 app.use(errorHandler);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());

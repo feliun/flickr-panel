@@ -26,6 +26,14 @@
 				                    controller: "PicBoardCtrl"
 				                }
 				            }
+						})
+						.state('about', {
+							url: "/about",
+							views: {
+				                "mainView": {
+				                    templateUrl: "../html/about.html"
+				                }
+				            }
 						});
 				});
 

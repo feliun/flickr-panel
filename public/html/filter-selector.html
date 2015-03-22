@@ -1,13 +1,15 @@
-<div class="jumbotron">
-	<h1>Flickr pics</h1>
-	<p>Find here the latest Flickr pictures...</p>
-	<div>
-		<tags-input class="list-group" ng-model="tags"></tags-input>
+<div class="col-md-12">
+	<div class="jumbotron">
+		<h1>Flickr pics</h1>
+		<p>Find here the latest Flickr pictures...</p>
+		<div>
+			<tags-input class="list-group" ng-model="tags"></tags-input>
+		</div>
+		<p>
+			<a class="btn btn-primary btn-lg" ui-sref="result" role="button" ng-click="queryPics()">
+				Find
+				<span class="badge">{{tags.length}}</span>
+			</a>
+		</p>
 	</div>
-	<p>
-		<a class="btn btn-primary btn-lg" ui-sref="result" role="button" ng-click="queryPics()">
-			Find
-			<span class="badge">{{tags.length}}</span>
-		</a>
-	</p>
 </div>
