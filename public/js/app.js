@@ -1,7 +1,7 @@
 (function() {
 	var app = angular.module('flickrApp', [ 'ui.router', 'ngTagsInput',
 											'httpServices',
-											'navigationCtrls', 'filterCtrls', 'picBoardCtrls',
+											'navigationCtrls', 'filterCtrls', 'picBoardCtrls', 'loadingCtrls',
 											'navigationDirectives' ])
 				.controller('MainCtrl', function() {
 
@@ -15,6 +15,15 @@
 				                "mainView": {
 				                    templateUrl: "../html/filter-selector.html",
 				                    controller: "FilterCtrl"
+				                }
+				            }
+						})
+						.state('loading', {
+							url: "/result",
+							views: {
+				                "mainView": {
+				                    templateUrl: "../html/loading.html",
+				                    controller: 'LoadingCtrl'
 				                }
 				            }
 						})
