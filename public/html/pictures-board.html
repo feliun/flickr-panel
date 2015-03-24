@@ -7,7 +7,7 @@
                     <h4><a target="_blank" href={{pic.link}}>{{pic.title || Untitled | limitTo: 35}}</a></h4>
                     <p>Published on {{pic.published | date:'d MMMM yyyy, HH:mm'}}</p>
                     <h4>Tags</h4>
-                    <p><span ng-repeat="tag in pic.tags | limitTo:14">{{tag}} </span></p>
+                    <p><span ng-repeat="tag in pic.tags | limitTo:14 track by $index">{{tag}} </span></p>
                 </div>
                 <div class="ratings">
                     <p>
