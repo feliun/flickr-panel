@@ -1,6 +1,9 @@
-<div class="col-md-12">
-    <div class="row">
-        <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="pic in picsList">
+<!-- <div class="col-md-12"> -->
+<div id="pic-board" class="container">
+    <div class="menu row">
+    <!-- <div class="row"> -->
+        <!-- <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="pic in picsList"> -->
+        <div class="flickr-item" ng-repeat="pic in picsList">
             <div class="thumbnail">
                 <img src={{pic.media.m}} title={{pic.title}}>
                 <div class="caption">
