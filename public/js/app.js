@@ -4,7 +4,7 @@
 											'navigationCtrls', 'filterCtrls', 'picBoardCtrls', 'loadingCtrls',
 											'navigationDirectives' ])
 				.controller('MainCtrl', function() {
-
+					//listen state on change - modify class to collapse header
 				})
 				.config(function($stateProvider, $urlRouterProvider) {
 					$urlRouterProvider.otherwise("/");

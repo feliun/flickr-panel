@@ -109,7 +109,7 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 files: {
-                    'public/dist/css/main.css': ['public/css/*.css']
+                    'public/dist/css/main.css': ['public/css/vendor/*.css', 'public/css/*.css']
                 }
             }
         },

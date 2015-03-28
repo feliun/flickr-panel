@@ -17,7 +17,7 @@
     width: 50px;
 }
 
-.container .tags .tag-item {
+.tags .tag-item, .pager li>a:focus {
 	color: #fff;
 	background-color: #d97119;
 	border: 1px solid #d97119;
@@ -30,6 +30,6 @@
   border: 1px solid #d97119;
 }
 
-.container a:hover {
+a:hover, a:focus {
   color: #d97119;
 }
