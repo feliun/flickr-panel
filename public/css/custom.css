@@ -5,8 +5,17 @@
 
 .container .tags .tag-item {
 	color: #fff;
-	background-color: #0085a1;
-	border: 1px solid #0085a1;
+	background-color: #d97119;
+	border: 1px solid #d97119;
 	font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 	font-size: 14px;
+}
+
+.post-preview li>a:hover {
+  background-color: #d97119;
+  border: 1px solid #d97119;
+}
+
+.container a:hover {
+  color: #d97119;
 }
