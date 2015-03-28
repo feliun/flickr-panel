@@ -1,8 +1,16 @@
-<!-- <div class="col-md-12"> -->
-<div id="pic-board" class="container">
+<div ng-hide={{validResult}} class="col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+    <div class="row text-center">
+        <p>
+            <h3>No results were found for your misterious search...</h3>
+        </p>
+        <a href="#">
+            <img class="img-responsive" src="img/broken.jpg" alt="">
+        </a>
+    </div>
+</div>
+
+<div id="pic-board" class="container" ng-show={{validResult}}>
     <div class="menu row">
-    <!-- <div class="row"> -->
-        <!-- <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="pic in picsList"> -->
         <div class="flickr-item" ng-repeat="pic in picsList">
             <div class="thumbnail">
                 <img src={{pic.media.m}} title={{pic.title}}>
