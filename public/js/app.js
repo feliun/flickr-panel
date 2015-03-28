@@ -19,16 +19,21 @@
 				            }
 						})
 						.state('loading', {
-							url: "/result",
+							url: "/loading?tags",
 							views: {
 				                "mainView": {
 				                    templateUrl: "../html/loading.html",
-				                    controller: 'LoadingCtrl'
+				                    controller: 'LoadingCtrl',
+				                    resolve:{
+										tags: ['$stateParams', function($stateParams){
+											return $stateParams.tags;
+										}]
+								   }
 				                }
 				            }
 						})
 						.state('result', {
-							url: "/result",
+							url: "/result?tags",
 							views: {
 				                "mainView": {
 				                    templateUrl: "../html/pictures-board.html",

@@ -1,6 +1,6 @@
 (function() {
-	var app = angular.module('picBoardCtrls', ['httpServices'])
-				.controller('PicBoardCtrl', ['$scope', 'HttpQueriesSvc', function($scope, httpQueries) {
+	var app = angular.module('picBoardCtrls', ['httpServices', 'ui.router'])
+				.controller('PicBoardCtrl', ['$scope', 'HttpQueriesSvc', '$stateParams', function($scope, httpQueries, $stateParams) {
 
 					$scope.validResult = true;
 					$scope.picsList = httpQueries.getPics();
