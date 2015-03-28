@@ -1,15 +1,16 @@
-<div class="col-md-12">
-	<div class="jumbotron">
-		<h1>Flickr pics</h1>
-		<p>Find here the latest Flickr pictures...</p>
-		<div>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="post-preview">
+        <div>
 			<tags-input class="list-group" ng-model="tags"></tags-input>
 		</div>
-		<p>
-			<a class="btn btn-primary btn-lg" ui-sref="loading" role="button" ng-click="queryPics()">
-				Find
-				<span class="badge">{{tags.length}}</span>
-			</a>
-		</p>
-	</div>
+		<ul class="pager">
+            <li class="next">
+	            <a ui-sref="loading" role="button" ng-click="queryPics()">
+					find
+					<span class="badge">{{tags.length}}</span>
+				</a>
+	        </li>
+        </ul>
+    </div>
+    <hr>
 </div>

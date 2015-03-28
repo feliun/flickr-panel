@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'public/dist/js/dependencies.min.js': [ 'public/bower_components/jquery/dist/jquery.min.js',
-                                                            'public/js/vendor/bootstrap-shop.min.js',
+                                                            'public/js/vendor/*.js',
                                                             'public/bower_components/lodash/lodash.min.js',
                                                             'public/bower_components/angular/angular.min.js',
                                                             'public/bower_components/angular-ui-router/release/angular-ui-router.min.js',
