@@ -22,20 +22,6 @@
 				                }
 				            }
 						})
-						.state('loading', {
-							url: "/loading?tags",
-							views: {
-				                "mainView": {
-				                    templateUrl: "../html/loading.html",
-				                    controller: 'LoadingCtrl',
-				                    resolve:{
-										tags: ['$stateParams', function($stateParams){
-											return $stateParams.tags;
-										}]
-								   }
-				                }
-				            }
-						})
 						.state('result', {
 							url: "/result?tags",
 							views: {

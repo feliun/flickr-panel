@@ -5,8 +5,7 @@
 
 					$scope.queryPics = function() {
 						var tags = _.pluck($scope.tags, 'text');
-						httpQueries.flickrData(tags);
-						$state.go("loading", { tags: tags });
+						$state.go("result", { tags: tags });
 						$scope.tags = [];
 					};
 
