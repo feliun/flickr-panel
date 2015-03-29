@@ -1,4 +1,5 @@
 var express = require('express');
+var https = require('https');
 var compress = require('compression');
 var cors = require('cors');
 var bodyParser = require('body-parser');
@@ -13,6 +14,30 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
 	res.redirect('index.html');
 });
+
+app.get('/pics', function(req, res) {
+	var flickrUrl = 'https://www.flickr.com/services/feeds/photos_public.gne/?format=json&jsoncallback=?';
+	if (req.query.tags) {
+		flickrUrl += '&tags=' + req.query.tags;
+	}
+    https.get(flickrUrl, function(httpResponse) {
+    	var data = "";
+    	var headers = httpResponse.headers;
+        var statusCode = httpResponse.statusCode;
+        res.setHeader('Content-Type', 'application/json');
+        httpResponse.on('data', function(chunk) {
+			data += chunk.toString();
+		});
+		httpResponse.on('end', function(chunk) {
+			data = data.replace('({', '{'); 
+			data = data.replace('})', '}');
+        	res.send(data);
+		});
+    }).on('error', function(err) {
+        res.status(500).send(err);
+    });
+});
+
 var port = process.env.PORT || 5000;
 app.listen(port, '0.0.0.0', function(err) {
     if (err) return console.err('Error: ', err.stack);

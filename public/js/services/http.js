@@ -10,15 +10,10 @@
 					};
 
 					this.flickrData = function(tagList) {
-						var flickrUrl = '//www.flickr.com/services/feeds/photos_public.gne/?format=json&jsoncallback=?';
-						var tagsQuery = tagList.join(',');
-						flickrUrl += '&tags=' + tagsQuery;
-						var self = this;
-						$.getJSON(flickrUrl, function(data) {
-							self.picList = data.items;
-							$rootScope.$broadcast('newPics', data.items); 
-						});
-					}; //Using this method because $http finds a CORS issue
+						var flickrUrl = '//0.0.0.0:5000/pics?tags=';
+						flickrUrl += tagList.join(',');
+						return $http.get(flickrUrl);
+					}; 
 
 					this.getPics = function() {
 						return this.picList;
