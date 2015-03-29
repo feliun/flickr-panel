@@ -22,21 +22,23 @@ app.get('/pics', function(req, res) {
 	}
     https.get(flickrUrl, function(httpResponse) {
     	var data = "";
-    	var headers = httpResponse.headers;
-        var statusCode = httpResponse.statusCode;
         res.setHeader('Content-Type', 'application/json');
         httpResponse.on('data', function(chunk) {
-			data += chunk.toString();
+			data += chunk;
 		});
 		httpResponse.on('end', function(chunk) {
-			data = data.replace('({', '{'); 
-			data = data.replace('})', '}');
-        	res.send(data);
+            data = "jsonpToJson" + data; //hack to extract the value in json format
+            var json = eval(data);
+        	res.send(json);
 		});
     }).on('error', function(err) {
         res.status(500).send(err);
     });
 });
+
+function jsonpToJson(json) {
+    return json;
+}
 
 var port = process.env.PORT || 5000;
 app.listen(port, '0.0.0.0', function(err) {

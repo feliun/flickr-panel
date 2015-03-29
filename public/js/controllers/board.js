@@ -18,7 +18,6 @@
 							}, COURTESY_DELAY);
 						})
 						.error(function(data, status, headers, config) {
-							console.log('error: ', status);
 							displayResult([]);
 						});
 
