@@ -6,6 +6,7 @@
 					var COURTESY_DELAY = 1000;
 					var MAX_TIME = 3000;
 					$scope.picsList = [];
+					$scope.loading = true;
 
 					var tags = $stateParams.tags;
 					tags = tags.split(',');
@@ -20,6 +21,7 @@
 
 					function displayResult() {
 						$scope.$apply(function() {
+							$scope.loading = false;
 							if ($scope.picsList.length === 0) $scope.validResult = false;
 							$scope.picsList = _.map($scope.picsList, function(pic) {
 								if (typeof pic.tags === 'string') pic.tags = pic.tags.split(' ');

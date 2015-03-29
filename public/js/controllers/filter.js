@@ -5,6 +5,7 @@
 
 					$scope.queryPics = function() {
 						var tags = _.pluck($scope.tags, 'text');
+						tags = tags.join(',');
 						$state.go("result", { tags: tags });
 						$scope.tags = [];
 					};

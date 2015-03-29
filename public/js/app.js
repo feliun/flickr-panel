@@ -1,8 +1,8 @@
 (function() {
 	var app = angular.module('flickrApp', [ 'ui.router', 'ngTagsInput',
 											'httpServices',
-											'navigationCtrls', 'filterCtrls', 'picBoardCtrls', 'loadingCtrls',
-											'navigationDirectives' ])
+											'navigationCtrls', 'filterCtrls', 'picBoardCtrls',
+											'navigationDirectives', 'loadingDirectives' ])
 				.controller('MainCtrl', function($rootScope, $scope) {
 					$scope.collapseHeader = false;
 					$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {

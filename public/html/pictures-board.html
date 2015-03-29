@@ -1,31 +1,35 @@
-<div ng-hide={{validResult}} class="col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
-    <div class="row text-center">
-        <p>
-            <h3>No results were found for your misterious search...</h3>
-        </p>
-        <a href="#">
-            <img class="img-responsive" src="img/broken.jpg" alt="">
-        </a>
-    </div>
-</div>
+<loading-screen ng-show="loading"></loading-screen>
 
-<div id="pic-board" class="container" ng-show={{validResult}}>
-    <div class="menu row">
-        <div class="flickr-item" ng-repeat="pic in picsList">
-            <div class="thumbnail">
-                <img src={{pic.media.m}} title={{pic.title}}>
-                <div class="caption">
-                    <h4><a target="_blank" href={{pic.link}}>{{pic.title || Untitled | limitTo: 35}}</a></h4>
-                    <p>Published on {{pic.published | date:'d MMMM yyyy, HH:mm'}}</p>
-                    <h4>Tags</h4>
-                    <p><span ng-repeat="tag in pic.tags | limitTo:14 track by $index">{{tag}} </span></p>
-                </div>
-                <div class="ratings">
-                    <p>
-                        <span class="glyphicon glyphicon-star" ng-repeat="i in getArrayFromNumber(pic.score) track by $index"></span>
-                    </p>
+<div ng-hide="loading">
+    <div ng-hide={{validResult}} class="col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+        <div class="row text-center">
+            <p>
+                <h3>No results were found for your misterious search...</h3>
+            </p>
+            <a href="#">
+                <img class="img-responsive" src="img/broken.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div id="pic-board" class="container" ng-show={{validResult}}>
+        <div class="menu row">
+            <div class="flickr-item" ng-repeat="pic in picsList">
+                <div class="thumbnail">
+                    <img src={{pic.media.m}} title={{pic.title}}>
+                    <div class="caption">
+                        <h4><a target="_blank" href={{pic.link}}>{{pic.title || Untitled | limitTo: 35}}</a></h4>
+                        <p>Published on {{pic.published | date:'d MMMM yyyy, HH:mm'}}</p>
+                        <h4>Tags</h4>
+                        <p><span ng-repeat="tag in pic.tags | limitTo:14 track by $index">{{tag}} </span></p>
+                    </div>
+                    <div class="ratings">
+                        <p>
+                            <span class="glyphicon glyphicon-star" ng-repeat="i in getArrayFromNumber(pic.score) track by $index"></span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+<div>
