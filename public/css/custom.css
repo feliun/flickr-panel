@@ -17,6 +17,23 @@
     width: 50px;
 }
 
+.intro-header {
+	overflow: hidden;
+    transition: height 0.8s;
+    -moz-transition: height 0.8s; /* Firefox 4 */
+    -webkit-transition: height 0.8s; /* Safari and Chrome */
+    -o-transition: height 0.8s; /* Opera */
+    height: 448px;
+}
+
+header.intro-header.collapse-header {
+	height: 115px;
+}
+
+.collapse-header .row {
+	display: none;
+}
+
 .container tags-input .tags .tag-item, .pager li>a:focus {
 	color: #fff;
 	background-color: #d97119;

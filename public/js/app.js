@@ -3,8 +3,12 @@
 											'httpServices',
 											'navigationCtrls', 'filterCtrls', 'picBoardCtrls', 'loadingCtrls',
 											'navigationDirectives' ])
-				.controller('MainCtrl', function() {
-					//listen state on change - modify class to collapse header
+				.controller('MainCtrl', function($rootScope, $scope) {
+					$scope.collapseHeader = false;
+					$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+						var statesWithHeader = [ 'filter' ];
+						$scope.collapseHeader = !_.includes(statesWithHeader, toState.name);
+					})
 				})
 				.config(function($stateProvider, $urlRouterProvider) {
 					$urlRouterProvider.otherwise("/");
