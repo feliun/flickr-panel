@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(compress());
 app.use(cors());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/dist'));
 app.get('/', function(req, res) {
-	res.redirect('./index-generated.html');
+	res.sendfile('./index.html');
 });
 
 app.get('/pics', function(req, res) {

@@ -48,6 +48,15 @@ module.exports = function (grunt) {
                     'public/js/directives/*.js'
                 ],
                 tasks: ['uglify:directives']
+            },
+            app: {
+                options: {
+                    livereload: LIVERELOAD_PORT
+                },
+                files: [
+                    'public/js/app.js'
+                ],
+                tasks: ['uglify:directives']
             }
         },
         nodemon: {
@@ -73,9 +82,9 @@ module.exports = function (grunt) {
             }
         },
         preprocess : {
-            prod : {
+            compile : {
                 src : './public/index.html',
-                dest : './public/index-generated.html'
+                dest : './public/dist/index.html'
             }
         },
         uglify: {
@@ -136,17 +145,11 @@ module.exports = function (grunt) {
         },
 		concurrent: {
 			dev: {
-				tasks: ['env:dev', 'nodemon', 'uglify:js', 'cssmin', 'preprocess:prod', 'open', 'watch' ],
+				tasks: ['env:dev', 'nodemon', 'uglify:js', 'cssmin', 'preprocess:compile', 'open', 'watch' ],
 				options: {
 					logConcurrentOutput: true
 				}
-			},
-            prod: {
-                tasks: ['env:prod', 'nodemon', 'uglify:js', 'cssmin', 'preprocess:prod', 'open', 'watch' ],
-                options: {
-                    logConcurrentOutput: true
-                }
-            }
+			}
 		},
         bower: {
 			install: {
@@ -163,12 +166,9 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', function (target) {
-        grunt.task.run([ 'env:prod', 'bower:install', 'copy', 'uglify:js', 'cssmin', 'preprocess:prod' ]);
+        grunt.task.run([ 'env:prod', 'bower:install', 'copy', 'uglify:js', 'cssmin', 'preprocess:compile' ]);
     })
     .registerTask('run-dev', function (target) {
         grunt.task.run([ 'concurrent:dev' ]);
-    })
-    .registerTask('run', function (target) {
-        grunt.task.run([ 'concurrent:prod' ]);
     });
 };
