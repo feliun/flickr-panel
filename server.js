@@ -12,7 +12,7 @@ app.use(compress());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
-	res.redirect('index.html');
+	res.redirect('./index-generated.html');
 });
 
 app.get('/pics', function(req, res) {
