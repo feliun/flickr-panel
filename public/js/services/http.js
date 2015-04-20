@@ -10,7 +10,7 @@
 					};
 
 					this.flickrData = function(tagList) {
-						var flickrUrl = '//127.0.0.1:5000/pics?tags=';
+						var flickrUrl = '//flickrbrowser.herokuapp.com/pics?tags=';
 						flickrUrl += tagList.join(',');
 						return $http.get(flickrUrl);
 					}; 
